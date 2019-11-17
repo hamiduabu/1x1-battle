@@ -2,7 +2,7 @@
 
 ## To access the project
 
-To access this project online, please click **[here:](https://hamiduabu.github.io/one-x-one-board-game/)**
+To access this project online, please click **[here:](https://hamiduabu.github.io/1x1-battle/)**
 
 To run this project locally
 
