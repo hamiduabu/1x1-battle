@@ -203,11 +203,11 @@ function switchImages(imageIndex) {
   }, 1000);
   setTimeout(() => {
     game.gallery.addClass('visible');
-  }, 1500);
+  }, 2000);
   setTimeout(() => {
     game.gallery.removeClass('invisible');
     game.gallery.removeClass('visible');
-  }, 2000);
+  }, 2500);
 }
 
 // Get players details from Modal Dialog Form
