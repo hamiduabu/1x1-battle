@@ -1,0 +1,174 @@
+.modal {
+  color: #222;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal-display {
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+}
+
+.modal .modal-content {
+  background-color: #fff;
+  color: #fff;
+  width: 70%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.modal header.modal-header {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.modal header.modal-header>section {
+  text-align: center;
+}
+
+.modal header.modal-header .close-btn-container {
+  text-align: end;
+  border: none;
+  margin-top: 0;
+}
+
+.modal header.modal-header .close-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3b3939;
+  cursor: pointer;
+}
+
+header.modal-header h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.player-input {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+label[for="player-one"],
+label[for="player-two"] {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.player-name input[type="text"] {
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.player1 .player-name input[type="text"]:focus {
+  background-color: rgba(102, 51, 153, 0.25);
+}
+
+.player2 .player-name input[type="text"]:focus {
+  background-color: rgba(0, 128, 0, 0.25);
+}
+
+.modal-select-player .player1,
+.modal-select-player .player2 {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.modal footer.modal-footer {
+  text-align: center;
+}
+
+.modal footer.modal-footer button {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #a52a2a;
+  width: 100px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.modal footer.modal-footer button:hover {
+  background-color: #a04040;
+}
+
+.player-name {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.avatar-options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.avatar-options label {
+  width: 30%;
+  text-align: center;
+}
+
+.avatar-options img {
+  width: 50px;
+  padding: 3px;
+}
+
+.avatar-options input[type="radio"] {
+  display: none;
+}
+
+.avatar-options input[type="radio"]:checked+img {
+  border: 2px inset #d3d3d3;
+  padding: 5px;
+  transition: 200ms;
+}
+
+.player1 .avatar-options input[type="radio"]:checked+img {
+  background-color: rgba(102, 51, 153, 0.5);
+}
+
+.player2 .avatar-options input[type="radio"]:checked+img {
+  background-color: hsla(120, 100%, 25%, 0.5);
+}
+
+.winner-modal {
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

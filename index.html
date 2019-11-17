@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link
+    href="https://fonts.googleapis.com/css?family=Exo:400,600|Modak|Pacifico|Saira+Condensed:400,600|Saira+Stencil+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/game-board.css">
+  <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+  <title>1x1 Board Game</title>
+</head>
+
+<body>
+  <section class="landing-container">
+    <header>
+      <h1>one <span>X</span> one</h1>
+      <h2>Turn Based Board Game</h2>
+    </header>
+
+    <section class="game-info">
+      <section class="instructions">
+        <h3>Instructions</h3>
+        <p>The objective is simple:</p>
+        <ul>
+          <li>You start with a basic weapon with 10 Attack Points(AP)</li>
+          <li>Four extra weapons are randomly distributed on the board.</li>
+          <li>Replace your weapon with one on the board with the highest potential AP</li>
+          <li>Pursue your opponent to their adjacent square before they upgrade theirs.</li>
+          <li>Smash 'em!!!</li>
+        </ul>
+        <ul>
+          <li>Move around the board with your keyboard or the on-screen arrow keys</li>
+          <li>You have 3 moves per turn.</li>
+          <li>You cannot move outside the board or through barriers</li>
+          <li>Available squares are highlighted in green.</li>
+        </ul>
+      </section>
+      <section class="play-game">
+        <button class="game-btn">Lets Play</button>
+      </section>
+      <section class="gallery">
+        <h3>Gallery</h3>
+        <figure>
+          <img src="#" alt="" class="zoom">
+          <figcaption></figcaption>
+        </figure>
+      </section>
+    </section>
+  </section>
+
+  <!-- Modal Start Game -->
+  <section id="player-details" class="modal player-input">
+    <section class="modal-content">
+      <header class="modal-header">
+        <section>
+          <h3>Enter Code Name & Select Avatar</h3>
+        </section>
+
+        <section class="close-btn-container"><button class="close-btn">&times;</button></section>
+
+      </header>
+      <section class="modal-body">
+        <form action="" class="player-input">
+          <section class="player1">
+            <section class="player-name">
+              <label for="player-one">Code Name</label>
+              <input type="text" id="player-one" maxlength="15" placeholder="Player One">
+            </section>
+            <section class="avatar-options">
+              <label><input type="radio" name="player-one-avatar" checked><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-one-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-one-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-one-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-one-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-one-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-one-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-one-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-one-avatar"><img alt="Player Avatar"></label>
+            </section>
+          </section>
+          <section class="player2">
+            <section class="player-name">
+              <label for="player-two">Code Name</label>
+              <input type="text" id="player-two" maxlength="15" placeholder="Player Two">
+            </section>
+            <section class="avatar-options">
+              <label><input type="radio" name="player-two-avatar" checked><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-two-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-two-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-two-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-two-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-two-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-two-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-two-avatar"><img alt="Player Avatar"></label>
+              <label><input type="radio" name="player-two-avatar"><img alt="Player Avatar"></label>
+            </section>
+          </section>
+        </form>
+      </section>
+      <footer class="modal-footer"><button type="submit" class="modal-game-btn" id="start-game">Begin</button></footer>
+    </section>
+  </section>
+
+  <!-- Game -->
+  <section class="game-container hide">
+    <header>
+      <h1 id="combatants" class="game-header"></h1>
+    </header>
+    <section class="game-area">
+
+      <!-- Player One -->
+
+      <!-- Player Two On Screen Keys -->
+      <section class="onscreen-keys-one">
+        <section class="player-keys">
+          <button id="player-one-up-key">&#x1F829;</button>
+          <section><button id="player-one-left-key">&#x1F828;</button> <button
+              id="player-one-right-key">&#x1F82A;</button></section>
+          <button id="player-one-down-key">&#x1F82B;</button>
+        </section>
+      </section>
+      <!-- player One Box -->
+      <section class="player-box-1">
+        <figure><img id="avatar1" class="player-box-avatar" src="#" alt="Player 1">
+          <img class="projectile" id="player-one-projectile" src="#" alt="">
+          <figcaption class="name"></figcaption>
+        </figure>
+        <!-- Health -->
+        <h3 class="health-points">HP</h3>
+        <section class="health-meter"><span class="hp-meter-value"></span></section>
+        <!-- End Health -->
+
+        <!-- Weapon -->
+        <h3>WEAPON</h3>
+        <figure id="player-one-weapon" class="grayscale">
+          <img src="#" alt="" class="weapon">
+          <figcaption class="weapon-name"></figcaption>
+        </figure>
+        <p class="weapon-description"></p>
+        <figure id="player-one-shield" class="shield hide">
+          <img src="assets/img/items/shield/shield1.png" alt="" class="shield">
+          <figcaption class="">Shield</figcaption>
+        </figure>
+        <h3>Max AP</h3>
+        <p><span class="attack-points"></span></p>
+
+      </section>
+      <!-- End Player One -->
+
+      <!-- Game Grid -->
+      <section class="game-board-container"></section>
+      <section class="battle-zone hide"></section>
+
+      <!-- Player Two -->
+      <section class="player-box-2">
+        <figure><img id="avatar2" class="player-box-avatar" src="#" alt="Player 2">
+          <img class="projectile" id="player-two-projectile" src="#" alt="">
+          <figcaption class="name"></figcaption>
+        </figure>
+        <!-- Health -->
+        <h3 class="health-points">HP</h3>
+        <section class="health-meter"><span class="hp-meter-value"></span></section>
+        <!-- End Health -->
+
+        <!-- Weapon -->
+        <h3>WEAPON</h3>
+        <figure id="player-two-weapon" class="grayscale">
+          <img src="#" alt="" class="weapon flip-image">
+          <figcaption class="weapon-name"></figcaption>
+        </figure>
+        <p class="weapon-description"></p>
+        <figure id="player-two-shield" class="shield hide">
+          <img src="assets/img/items/shield/shield1.png" alt="" class="shield">
+          <figcaption class="">Shield</figcaption>
+        </figure>
+        <h3>Max AP</h3>
+        <p><span class="attack-points"></span></p>
+      </section>
+
+      <!-- Player Two On Screen Keys -->
+      <section class="onscreen-keys-two">
+        <section class="player-keys">
+          <button id="player-two-up-key">&#x1F829;</button>
+          <section><button id="player-two-left-key">&#x1F828;</button> <button
+              id="player-two-right-key">&#x1F82A;</button></section>
+          <button id="player-two-down-key">&#x1F82B;</button>
+        </section>
+      </section>
+    </section>
+    <!-- End Player Two -->
+  </section>
+
+  <!-- Modal Game Over-->
+  <section id="winner-details" class="modal">
+    <section class="modal-content">
+      <section class="winner-image">
+        <img id="winner-one" src="#" alt="" class="hide">
+        <img id="winner-two" src="#" alt="" class="hide">
+      </section>
+      <h1 class="winner-name"></h1>
+
+      <footer class="modal-footer"><button type="submit" class="modal-game-btn" id="game-over">HOME</button></footer>
+    </section>
+  </section>
+
+  <!-- Notifications -->
+  <section class="notification">
+    <!-- error message -->
+    <section class="error-msg invisible hide">
+      <p>Illegal Move</p>
+    </section>
+    <!-- Shield Alert -->
+    <section class="shield-alert invisible hide">
+      <p>Your Shield is Already Up. ATTACK!!!!</p>
+    </section>
+  </section>
+
+  <script type="module" src="js/game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Saira Condensed', 'Lucida Sans', Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #333;
+  background-image: url("../assets/bg-img/background1-dark.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.landing-container * {
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+header h1 {
+  text-align: center;
+}
+
+
+.landing-container header {
+  text-align: center;
+  position: relative;
+}
+
+.landing-container header>h1 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 4rem;
+  font-family: 'Pacifico', sans-serif;
+}
+
+.landing-container header>h1>span {
+  color: #a52a2a;
+  font-size: 4.5rem;
+  font-family: 'Modak', cursive;
+  text-transform: uppercase;
+}
+
+.landing-container header>h2 {
+  font-size: 1.1rem;
+  width: 200px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  margin-left: -100px;
+}
+
+.landing-container .game-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+}
+
+.game-info>section.instructions,
+.game-info>section.gallery {
+  width: 550px;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+figure {
+  text-align: center;
+  position: relative;
+}
+
+.gallery figure {
+  width: 80%;
+  height: 80%;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.gallery figure img {
+  width: 100%;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.play-game {
+  text-align: center;
+  margin: 25px auto;
+}
+
+.instructions>p,
+.instructions>ul li {
+  text-align: justify;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 0 15px;
+}
+
+.game-info h3,
+.game-info p {
+  margin: 0 5px;
+}
+
+button.game-btn {
+  text-decoration: none;
+  border: 1px dashed #fff;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px;
+  font-weight: 600;
+  background-color: #a52a2a;
+  width: 200px;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+button.game-btn:hover {
+  background-color: #a04040;
+}
+
+.zoom {
+  transform: scale(1);
+  transition: transform 500ms;
+}
+
+.zoom:hover {
+  transform: scale(1.25);
+  position: relative;
+  z-index: 1;
+  transition: 500ms;
+}
